@@ -2,8 +2,16 @@
 ### Graham Traines
 
 ### Context:
-	The minimax algorithm belongs to the class of algorithms used to perform path-finding searches. Specifically, minimax addresses the problem posed by a game tree, where two players take turns until one wins or the game results in a draw. The AI solution for creating a computer opponent in the game tic-tac-toe is an example of a game which can be solved by finding an optimal solution for a given state using a game tree, and we use minimax to find the solution (Heineman, G., et al., p. 172). 
-	Put abstractly, in minimax the computer plays out every possible move using the given game state against a perfect hypothetical opponent and selects the move that will lead to the best outcome for the computer. This is reminiscent of the intelligent military supercomputer WOPR playing thousands of games of tic-tac-toe against itself in the 1980s movie WarGames, except that instead of concluding that tic-tac-toe is futile and shouldn't be played at all, minimax ultimately allows the computer to make a move regardless of the futility of the situation. 
+		The minimax algorithm belongs to the class of algorithms used to perform path-finding searches. Specifically, minimax
+	addresses the problem posed by a game tree, where two players take turns until one wins or the game results in a draw.
+	The AI solution for creating a computer opponent in the game tic-tac-toe is an example of a game which can be solved by
+	finding an optimal solution for a given state using a game tree, and we use minimax to find the solution (Heineman, G.,
+	et al., p. 172). 
+	
+	Put abstractly, in minimax the computer plays out every possible move using the given game state against a perfect
+	hypothetical opponent and selects the move that will lead to the best outcome for the computer. This is reminiscent of
+	the intelligent military supercomputer WOPR playing thousands of games of tic-tac-toe against itself in the 1980s movie
+	WarGames, except that instead of concluding that tic-tac-toe is futile and shouldn't be played at all, minimax  				ultimately allows the computer to make a move regardless of the futility of the situation. 
 ### Definition:
 	Minimax is a recursive algorithm which takes a current game state to be evaluated (in the case of our tic-tac-toe game, the current board with the last move completed by the human player) and then recursively evaluates the outcomes of each legal move which could be performed by the computer against a hypothetical opponent, who is also attempting to maximize its score. The algorithm is therefore evaluating the best move available for the “active” player, which represents either the computer or the opponent at each possible move. The game state evaluation function checks the board at each recursive iteration for a win or draw. If there is no winner and additional moves are possible, the recursion continues. If a winning move has been made, minimax checks to see whether the computer or its opponent is being currently evaluated. If the computer's move is being evaluated, the evaluation function returns a positive score; if it is the opponent, it returns a negative score. Ultimately, the algorithm will chose the move which returns the highest positive score once the theoretical game has been played to completion. 
 ### Running Time:
